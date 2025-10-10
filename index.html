@@ -264,8 +264,14 @@
     <!-- Mobile Menu JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Wait for mobile breakpoint to initialize
+            let mobileMenuInitialized = false;
+
             function initMobileMenu() {
+                // Prevent multiple initializations
+                if (mobileMenuInitialized) {
+                    return;
+                }
+
                 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
                 const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
                 const mobileMenuPanel = document.getElementById('mobileMenuPanel');
@@ -276,56 +282,114 @@
                     return;
                 }
 
-                // Toggle mobile menu
+                let isMenuOpen = false;
+
+                // Toggle mobile menu with improved state management
                 function toggleMobileMenu() {
-                    const isActive = mobileMenuOverlay.classList.contains('active');
-                    if (isActive) {
-                        mobileMenuOverlay.classList.remove('active');
-                        mobileMenuPanel.classList.remove('active');
-                        document.body.style.overflow = '';
-                    } else {
+                    isMenuOpen = !isMenuOpen;
+
+                    if (isMenuOpen) {
                         mobileMenuOverlay.classList.add('active');
                         mobileMenuPanel.classList.add('active');
                         document.body.style.overflow = 'hidden';
+                        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                    } else {
+                        mobileMenuOverlay.classList.remove('active');
+                        mobileMenuPanel.classList.remove('active');
+                        document.body.style.overflow = '';
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
                     }
                 }
 
-                // Event listeners
-                mobileMenuBtn.addEventListener('click', function(e) {
+                // Close mobile menu
+                function closeMobileMenu() {
+                    if (isMenuOpen) {
+                        toggleMobileMenu();
+                    }
+                }
+
+                // Event listeners with improved mobile support
+                function handleMenuButtonClick(e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     toggleMobileMenu();
-                });
+                }
+
+                function handleCloseButtonClick(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeMobileMenu();
+                }
+
+                function handleOverlayClick(e) {
+                    if (e.target === mobileMenuOverlay) {
+                        e.preventDefault();
+                        closeMobileMenu();
+                    }
+                }
+
+                function handleMenuItemClick(e) {
+                    e.preventDefault();
+                    // Allow navigation if it's a real link (not just #)
+                    if (this.getAttribute('href') !== '#') {
+                        window.location.href = this.getAttribute('href');
+                    }
+                    closeMobileMenu();
+                }
+
+                // Add event listeners with both click and touch support
+                mobileMenuBtn.addEventListener('click', handleMenuButtonClick);
+                mobileMenuBtn.addEventListener('touchend', handleMenuButtonClick, { passive: false });
 
                 if (mobileMenuClose) {
-                    mobileMenuClose.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        toggleMobileMenu();
-                    });
+                    mobileMenuClose.addEventListener('click', handleCloseButtonClick);
+                    mobileMenuClose.addEventListener('touchend', handleCloseButtonClick, { passive: false });
                 }
 
-                mobileMenuOverlay.addEventListener('click', function(e) {
-                    if (e.target === mobileMenuOverlay) {
-                        toggleMobileMenu();
-                    }
-                });
+                mobileMenuOverlay.addEventListener('click', handleOverlayClick);
+                mobileMenuOverlay.addEventListener('touchend', handleOverlayClick, { passive: false });
 
                 // Close menu when clicking on menu items
                 const menuItems = document.querySelectorAll('.mobile-menu-item');
                 menuItems.forEach(item => {
-                    item.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        toggleMobileMenu();
-                    });
+                    item.addEventListener('click', handleMenuItemClick);
+                    item.addEventListener('touchend', handleMenuItemClick, { passive: false });
                 });
+
+                // Close menu on escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && isMenuOpen) {
+                        closeMobileMenu();
+                    }
+                });
+
+                // Prevent body scroll when menu is open
+                mobileMenuOverlay.addEventListener('touchmove', function(e) {
+                    if (isMenuOpen) {
+                        e.preventDefault();
+                    }
+                }, { passive: false });
+
+                mobileMenuInitialized = true;
+                console.log('Mobile menu initialized successfully');
             }
 
             // Initialize on load
             initMobileMenu();
 
-            // Re-initialize on window resize (in case of breakpoint changes)
+            // Only reinitialize if window width crosses mobile breakpoint
+            let lastWindowWidth = window.innerWidth;
             window.addEventListener('resize', function() {
-                // Small delay to ensure CSS has updated
-                setTimeout(initMobileMenu, 100);
+                const currentWidth = window.innerWidth;
+                // Only reinitialize if crossing mobile breakpoint (767px)
+                if ((lastWindowWidth <= 767 && currentWidth > 767) ||
+                    (lastWindowWidth > 767 && currentWidth <= 767)) {
+                    setTimeout(function() {
+                        mobileMenuInitialized = false;
+                        initMobileMenu();
+                    }, 100);
+                }
+                lastWindowWidth = currentWidth;
             });
         });
     </script>
