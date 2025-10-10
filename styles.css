@@ -1,0 +1,1357 @@
+/* =================================================================
+   INFOTECH - PROFESSIONAL RESUME SERVICES
+   Pixel-Perfect CSS Implementation from Figma Design
+   Desktop Base Width: 1440px
+================================================================= */
+
+/* =================================================================
+   RESET & BASE STYLES
+================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Figtree', sans-serif;
+    color: #000000;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* =================================================================
+   DESKTOP CONTAINER - 1440px Base
+================================================================= */
+.desktop-container {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    min-height: 1683px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    margin: 0 auto; /* Center the container */
+}
+
+/* =================================================================
+   HEADER / NAVIGATION - 100px Height
+================================================================= */
+.header {
+    position: relative;
+    width: 100%;
+    margin: auto 0;
+    height: 100px;
+    background: #FFFFFF;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+}
+
+/* Mobile Menu Button - Hidden on Desktop */
+.mobile-menu-btn {
+    display: none !important;
+}
+
+/* Mobile Menu Overlay - Hidden on Desktop */
+.mobile-menu-overlay {
+    display: none !important;
+}
+
+/* Mobile Menu Panel - Hidden on Desktop */
+.mobile-menu-panel {
+    display: none !important;
+}
+
+/* Desktop Header CTA - Hidden on Mobile */
+.desktop-header-cta {
+    display: flex;
+    align-items: center;
+}
+
+/* Mobile Hero Container - Hidden on Desktop */
+.mobile-hero-container {
+    display: none;
+}
+
+.header-content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 2%; /* Percentage padding */
+    gap: 70px;
+    width: 96%; /* Percentage width */
+    max-width: 1440px;
+    height: 100px;
+    margin: 0 auto; /* Center within header */
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 58px;
+}
+
+.logo-image {
+    height: 58px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    width: 519px;
+    height: 42px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 4px;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #282828;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #FA1239;
+}
+
+
+/* =================================================================
+   BUTTONS - Reusable Button Styles
+================================================================= */
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 22px;
+    gap: 10px;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #FA1239;
+    box-shadow: 0px 0px 12px rgba(250, 18, 57, 0.58);
+    color: #FFFFFF;
+    height: 46px;
+}
+
+.btn-primary:hover {
+    background: #d60f2f;
+    box-shadow: 0px 0px 16px rgba(250, 18, 57, 0.75);
+}
+
+.btn-outline {
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #FA1239;
+    box-shadow: 0px 0px 12px rgba(250, 18, 57, 0.58);
+    color: #FA1239;
+    width: 202px;
+    height: 46px;
+}
+
+.btn-outline:hover {
+    background: #FA1239;
+    color: #FFFFFF;
+}
+
+/* =================================================================
+   HERO SECTION - 909px Height with Gradient Background
+================================================================= */
+.hero-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    isolation: isolate;
+    width: 100%;
+    max-width: 1440px;
+    height: 909px;
+    margin: 0 auto; /* Center the section */
+}
+
+.hero-background {
+    position: absolute;
+    width: 100%;
+    height: 909px;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(261.18deg, #FFE7EB -0.46%, #FFBFCA 100.67%);
+    z-index: 0;
+}
+
+/* Hero Content Container */
+.hero-content {
+    position: absolute;
+    width: 45%; /* Percentage width for responsiveness */
+    max-width: 620px;
+    min-width: 400px;
+    height: 510px;
+    left: 7%; /* Percentage left positioning */
+    top: 228px;
+    z-index: 1;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 38px;
+    isolation: isolate;
+    width: 620px;
+    height: 510px;
+}
+
+/* Decorative Line */
+.decorative-line {
+    position: absolute;
+    width: 363px;
+    height: 17px;
+    left: 0px;
+    top: 153.25px;
+    z-index: 3;
+}
+
+.line-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Hero Heading */
+.hero-heading {
+    width: 620px;
+    height: 252px;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 78px;
+    text-transform: capitalize;
+    color: #000000;
+    z-index: 0;
+}
+
+/* Hero Description */
+.hero-description {
+    width: 485px;
+    height: 136px;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 34px;
+    text-transform: capitalize;
+    color: #000000;
+    z-index: 1;
+}
+
+/* Hero Buttons Container */
+.hero-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    width: 383px;
+    height: 46px;
+    z-index: 2;
+}
+
+/* =================================================================
+   HERO IMAGE & DECORATIVE ELEMENTS
+================================================================= */
+.hero-image {
+    position: absolute;
+    width: 45%; /* Percentage width for responsiveness */
+    max-width: 633.87px;
+    min-width: 300px;
+    height: 727.37px;
+    right: 7%; /* Percentage right positioning instead of left */
+    top: 190px;
+    z-index: 1;
+    display: flex; /* Ensure proper containment */
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* Decorative Circle - Large */
+.circle-large {
+    position: absolute;
+    width: 633.87px;
+    height: 633.88px;
+    left: 0px;
+    top: 93.49px;
+    background: radial-gradient(55.26% 55.26% at 50% 44.74%, #FFE4E9 0%, #FFCBD4 100%);
+    border-radius: 50%;
+    z-index: 1; /* Ensure proper layering */
+}
+
+/* Hide decorative circles on desktop */
+@media screen and (min-width: 768px) {
+    .circle-large,
+    .circle-medium {
+        display: none !important;
+    }
+}
+
+/* Decorative Circle - Medium */
+.circle-medium {
+    position: absolute;
+    width: 476.45px;
+    height: 476.45px;
+    left: 79.23px;
+    top: 171.68px;
+    background: radial-gradient(50.11% 50.11% at 50.11% 49.89%, #FECDD5 0%, #FFE2E7 100%);
+    border-radius: 50%;
+}
+
+/* Student Image */
+.student-image {
+    position: absolute;
+    width: 506px;
+    height: 727px;
+    left: 0px; /* Start from same position as circle-large */
+    top: 0px;
+    object-fit: cover;
+    object-position: center;
+    z-index: 2; /* Above the circles */
+}
+
+/* Hide student image on desktop */
+@media screen and (min-width: 768px) {
+    .student-image {
+        display: none !important;
+    }
+}
+
+/* Desktop Mobile Girl Image */
+.desktop-mobile-girl {
+    position: absolute;
+    width: 100%; /* Fill parent container width */
+    height: 100%; /* Fill parent container height */
+    left: 0; /* Start from container edge */
+    top: 0; /* Start from container top */
+    object-fit: cover;
+    object-position: center;
+    z-index: 2;
+}
+
+/* Hide desktop mobile girl on mobile */
+@media screen and (max-width: 767px) {
+    .desktop-mobile-girl {
+        display: none !important;
+    }
+}
+
+/* =================================================================
+   STATS CARD - "260+ Online Resume Created"
+================================================================= */
+.stats-card {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+    width: 270.66px;
+    height: 133.43px;
+    left: 1129px;
+    top: 734px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+/* Hide stats card on desktop */
+@media screen and (min-width: 768px) {
+    .stats-card {
+        display: none !important;
+    }
+}
+
+.stats-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cap-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.stats-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 124px;
+    height: 76px;
+}
+
+.stats-number {
+    width: 124px;
+    height: 36px;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.stats-label {
+    width: 124px;
+    height: 40px;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: #666666;
+}
+
+/* =================================================================
+   RATING CARD - "4.9 Instructor Rating"
+================================================================= */
+.rating-card {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+    gap: 20px;
+    width: 350px;
+    height: 117px;
+    left: 729px;
+    top: 585px;
+    background: rgba(255, 255, 255, 0.79);
+    backdrop-filter: blur(45.5px);
+    border-radius: 10px;
+    z-index: 2;
+}
+
+/* Hide rating card on desktop */
+@media screen and (min-width: 768px) {
+    .rating-card {
+        display: none !important;
+    }
+}
+
+.rating-score {
+    width: 101px;
+    height: 77px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 77px;
+    text-transform: capitalize;
+    color: #1CB098;
+}
+
+.rating-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 11px;
+    width: 199px;
+    height: 56.35px;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+    width: 101.61px;
+    height: 16.35px;
+}
+
+.star {
+    width: 17.12px;
+    height: 16.35px;
+    background: #FFAB00;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.rating-label {
+    width: 199px;
+    height: 29px;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+/* =================================================================
+   FEATURES SECTION - 774px Height
+================================================================= */
+.features-section {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 774px;
+    background: #FFFFFF;
+    margin: 0 auto; /* Center the section */
+}
+
+.features-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 50px;
+    width: 90%; /* Percentage width */
+    max-width: 1255px;
+    height: 678px;
+    left: 5%; /* Percentage left positioning */
+    top: 50px;
+    margin: 0 auto; /* Center the container */
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 15px; /* Reduced gap between elements */
+    width: 100%; /* Percentage width */
+    max-width: 1240px;
+    height: 178px;
+    margin: 0 auto; /* Center the header */
+}
+
+.section-badge {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+    width: 154px;
+    height: 42px;
+    background: rgba(253, 146, 164, 0.3);
+    border-radius: 6px;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.section-title {
+    width: 100%; /* Percentage width */
+    max-width: 1240px;
+    height: 55px; /* Reduced height for two-line layout */
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 55px;
+    display: block; /* Changed from flex to block for proper centering */
+    text-align: center;
+    text-transform: capitalize;
+    color: #000000;
+    margin: 0 auto; /* Center the title */
+    white-space: nowrap; /* Prevent text from breaking into multiple lines */
+}
+
+.section-title-second {
+    margin: 0 auto; /* Center horizontally - override any previous margins */
+    height: 55px; /* Same height as first title */
+    text-align: center; /* Ensure center alignment */
+}
+
+/* Mobile-specific title styles */
+.mobile-title {
+    display: none; /* Hidden by default */
+}
+
+.mobile-highlight-title {
+    color: #ff2d55; /* Red color for the highlight */
+    font-weight: 600;
+}
+
+/* Show mobile titles on mobile, hide desktop titles */
+@media screen and (max-width: 767px) {
+    .desktop-title {
+        display: none !important;
+    }
+
+    .mobile-title {
+        display: block !important;
+        height: auto; /* Allow flexible height for wrapping */
+        font-size: 32px; /* Smaller font for mobile */
+        line-height: 40px;
+        margin: 2px auto; /* Reduced margin between lines */
+        text-align: center;
+        white-space: normal; /* Allow text wrapping */
+        word-wrap: break-word; /* Break long words if needed */
+    }
+
+    .mobile-highlight-title {
+        margin: 3px auto; /* Reduced spacing for highlight */
+    }
+}
+
+.highlight-text {
+    color: #ff2d55;
+}
+
+.black-text {
+    color: #000000;
+}
+
+/* =================================================================
+   FEATURE CARDS GRID - 4 Cards
+================================================================= */
+.features-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+    width: 100%; /* Percentage width */
+    max-width: 1255px;
+    height: 450px;
+    margin: 0 auto; /* Center the grid */
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 24px;
+    width: 298.75px;
+    height: 450px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 18px;
+    width: 258.75px;
+    height: 278px;
+}
+
+/* Card Illustrations */
+.card-illustration {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-title {
+    width: 258.75px;
+    height: 60px;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.card-description {
+    width: 258.75px;
+    height: 90px;
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #595959;
+}
+
+/* =================================================================
+   RESPONSIVE DESIGN - Tablet & Mobile
+================================================================= */
+
+/* Large Desktop - 1200px to 1400px */
+@media screen and (max-width: 1400px) and (min-width: 1201px) {
+    .features-grid {
+        gap: 15px; /* Reduce gap for better fit */
+    }
+
+    .feature-card {
+        width: calc(25% - 11.25px); /* 4 cards with adjusted gap */
+        min-width: 250px; /* Minimum width for readability */
+    }
+}
+
+/* Medium Desktop - 1025px to 1200px */
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+    .features-grid {
+        gap: 15px; /* Reduce gap for better fit */
+    }
+
+    .feature-card {
+        width: calc(25% - 11.25px); /* Still 4 cards but with tighter spacing */
+        min-width: 240px; /* Smaller minimum width */
+    }
+}
+
+/* Tablet - 768px to 1024px */
+@media screen and (max-width: 1024px) {
+    .desktop-container {
+        width: 100%;
+        max-width: 768px;
+        height: auto;
+    }
+    
+    .header,
+    .header-content {
+        width: 100%;
+    }
+    
+    .header-content {
+        padding: 0px 40px;
+        gap: 30px;
+    }
+    
+    .nav-menu {
+        width: auto;
+        gap: 16px;
+    }
+    
+    .nav-item {
+        font-size: 16px;
+        padding: 8px;
+    }
+    
+    .hero-section {
+        width: 100%;
+        height: auto;
+        min-height: 700px;
+        padding-bottom: 50px;
+    }
+    
+    .hero-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .hero-content {
+        width: 90%;
+        max-width: 500px;
+        left: 40px;
+        top: 150px;
+    }
+    
+    .hero-text {
+        width: 100%;
+        height: auto;
+    }
+    
+    .hero-heading {
+        width: 100%;
+        height: auto;
+        font-size: 48px;
+        line-height: 58px;
+    }
+    
+    .hero-description {
+        width: 100%;
+        height: auto;
+        font-size: 15px;
+        line-height: 28px;
+    }
+    
+    .hero-image {
+        width: 400px;
+        height: 500px;
+        left: auto;
+        right: 40px;
+        top: 150px;
+    }
+    
+    .circle-large {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .circle-medium {
+        width: 300px;
+        height: 300px;
+        left: 50px;
+        top: 100px;
+    }
+    
+    .student-image {
+        width: 350px;
+        height: 500px;
+    }
+    
+    .stats-card {
+        left: auto;
+        right: 40px;
+        top: 600px;
+        width: 240px;
+        padding: 20px;
+    }
+    
+    .rating-card {
+        left: 40px;
+        top: 500px;
+        width: 300px;
+    }
+    
+    .features-section {
+        width: 100%;
+        height: auto;
+        padding: 50px 0;
+    }
+    
+    .features-container {
+        width: 90%;
+        height: auto;
+        left: 5%;
+        top: 0;
+    }
+    
+    .section-header {
+        width: 100%;
+    }
+    
+    .section-title {
+        width: 100%;
+        font-size: 36px;
+        line-height: 46px;
+    }
+    
+    .features-grid {
+        width: 100%;
+        flex-wrap: wrap;
+        height: auto;
+        gap: 30px;
+        justify-content: center;
+    }
+    
+    .feature-card {
+        width: calc(50% - 15px);
+        min-width: 280px;
+    }
+}
+
+/* Mobile - Max 767px */
+@media screen and (max-width: 767px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .desktop-container {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .header-content {
+        padding: 0px 20px;
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 100px;
+    }
+    
+    .logo {
+        height: 45px;
+    }
+
+    .logo-image {
+        height: 45px;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .desktop-header-cta {
+        display: none;
+    }
+    
+    .nav-item {
+        font-size: 14px;
+    }
+    
+    
+    .hero-section {
+        height: auto;
+        min-height: 800px; /* Reduced for mobile to eliminate excessive space */
+        width: 100%;
+        overflow-x: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .hero-content {
+        width: calc(100% - 40px);
+        left: 20px;
+        top: 100px;
+        position: relative;
+    }
+    
+    .hero-heading {
+        font-size: 36px;
+        line-height: 1.0; /* Minimal line height for no gaps */
+        height: auto;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .hero-description {
+        font-size: 14px;
+        line-height: 24px;
+        text-transform: none;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 16px;
+    }
+    
+    .btn-outline {
+        width: 100%;
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
+    
+    .decorative-line,
+    .decorative-lines {
+        display: none;
+    }
+    
+    /* Mobile Hero Container - Flexbox Column Layout */
+    .mobile-hero-container {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+        padding: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .mobile-hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        gap: 20px;
+    }
+
+    /* Mobile Girl Image - Now part of flexbox */
+    .mobile-girl-image {
+        width: 280px;
+        height: 350px;
+        object-fit: contain;
+        order: 2; /* Image comes after content */
+    }
+
+    /* Hide desktop hero content and cards on mobile */
+    .hero-content,
+    .hero-image,
+    .stats-card,
+    .rating-card {
+        display: none;
+    }
+    
+    .features-section {
+        padding: 50px 0 30px 0; /* More top padding to ensure visibility */
+        overflow-x: hidden;
+        position: relative;
+        width: 100%;
+        background: #FFFFFF;
+    }
+
+    .features-container {
+        width: 100%;
+        left: 0;
+        padding: 0 20px;
+        gap: 30px; /* Better spacing between sections */
+        position: relative;
+        top: 0;
+    }
+
+    .section-header {
+        width: 100%;
+        gap: 10px; /* Reduced spacing for mobile - tighter layout */
+    }
+
+    .section-title {
+        font-size: 28px;
+        line-height: 36px;
+        height: auto;
+        margin: 0; /* Remove auto margin for better control */
+        text-align: center;
+        width: 100%;
+    }
+
+    .features-grid {
+        flex-direction: column;
+        gap: 25px; /* Better spacing between cards */
+        width: 100%;
+    }
+
+    .feature-card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 20px; /* Better internal spacing */
+    }
+
+    .card-image {
+        height: auto; /* Allow flexible height */
+        gap: 15px;
+    }
+
+    .card-illustration {
+        width: 100%;
+        max-width: 250px;
+        height: 180px;
+    }
+
+    .card-title {
+        font-size: 18px;
+        line-height: 26px;
+        height: auto;
+        text-align: center;
+    }
+
+    .card-description {
+        font-size: 16px;
+        line-height: 24px;
+        height: auto;
+        text-align: center;
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+        display: block !important;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        order: 2;
+        margin-left: auto;
+    }
+
+    /* Mobile Menu Overlay - Show on Mobile */
+    .mobile-menu-overlay {
+        display: none !important;
+    }
+
+    .mobile-menu-overlay.active {
+        display: block !important;
+    }
+
+    /* Mobile Menu Panel - Show on Mobile */
+    .mobile-menu-panel {
+        display: block !important;
+    }
+
+    .mobile-menu-btn:hover {
+        background-color: rgba(250, 18, 57, 0.1);
+    }
+
+    /* Ensure mobile menu button is clickable */
+    .mobile-menu-btn:focus {
+        outline: 2px solid #FA1239;
+        outline-offset: 2px;
+    }
+
+    .hamburger-icon {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .hamburger-line {
+        width: 100%;
+        height: 2px;
+        background-color: #FA1239;
+        border-radius: 1px;
+        transition: all 0.3s ease;
+    }
+
+    /* Mobile Menu Overlay */
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 10000;
+        display: none;
+    }
+
+    .mobile-menu-overlay.active {
+        display: block;
+    }
+
+    /* Mobile Menu Panel */
+    .mobile-menu-panel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 327px;
+        height: 100vh;
+        background: #FFFFFF;
+        z-index: 10002;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu-panel.active {
+        transform: translateX(0);
+    }
+
+    /* Mobile Menu Header */
+    .mobile-menu-header {
+        padding: 10px 16px;
+        background: #FFE3E8;
+        border-bottom: 1px solid rgba(250, 18, 57, 0.2);
+    }
+
+    .mobile-menu-header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .mobile-menu-logo {
+        width: 125.61px;
+        height: 34.62px;
+        position: relative;
+    }
+
+    .mobile-menu-logo-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    .mobile-menu-close {
+        width: 32px;
+        height: 32px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .close-icon {
+        position: relative;
+        width: 24px;
+        height: 24px;
+    }
+
+    .close-icon::before,
+    .close-icon::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: #FA1239;
+        border-radius: 1px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .close-icon::after {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    /* Mobile Menu Content */
+    .mobile-menu-content {
+        padding: 50px 16px;
+        background: #FFE3E8;
+        height: calc(100vh - 54.62px);
+    }
+
+    .mobile-menu-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 36px;
+    }
+
+    .mobile-menu-item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        gap: 24px;
+        text-decoration: none;
+        color: #282828;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-menu-item:hover {
+        color: #FA1239;
+    }
+
+    .mobile-menu-item.active {
+        color: #FA1239;
+    }
+
+    .mobile-menu-icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-menu-icon-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 4px;
+    }
+
+    .mobile-menu-text {
+        font-family: 'Figtree';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: capitalize;
+    }
+
+    .mobile-menu-cta {
+        width: 100%;
+        margin-top: auto;
+    }
+
+    .mobile-menu-cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Extra Small Mobile - Max 480px */
+@media screen and (max-width: 480px) {
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .hero-heading {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    
+    .card-title {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    
+    .card-description {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
